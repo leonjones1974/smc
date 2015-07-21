@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.github.orolle</groupId>
+		<groupId>uk.camsw.smc</groupId>
 		<artifactId>SMC</artifactId>
-		<version>6.4.0</version>
+		<version>6.4-SNAPSHOT</version>
 	</parent>
-	<version>6.4.0</version>
-	<groupId>com.github.orolle</groupId>
+
+	<groupId>uk.camsw.smc</groupId>
 	<artifactId>smc-maven-plugin</artifactId>
 	<name>State Machine Compiler (SMC) Maven Plugin</name>
 	<inceptionYear>2006</inceptionYear>
@@ -42,33 +42,33 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.orolle</groupId>
+			<groupId>uk.camsw.smc</groupId>
 			<artifactId>smc-core</artifactId>
-			<version>6.4.0</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.orolle</groupId>
+			<groupId>uk.camsw.smc</groupId>
 			<artifactId>smc-model</artifactId>
-			<version>6.4.0</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.orolle</groupId>
+			<groupId>uk.camsw.smc</groupId>
 			<artifactId>smc-generator</artifactId>
-			<version>6.4.0</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.orolle</groupId>
+			<groupId>uk.camsw.smc</groupId>
 			<artifactId>smc-parser</artifactId>
-			<version>6.4.0</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.orolle</groupId>
+			<groupId>uk.camsw.smc</groupId>
 			<artifactId>smc-lib-java</artifactId>
-			<version>6.4.0</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
@@ -131,20 +131,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.4</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>

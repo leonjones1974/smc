@@ -1,7 +1,6 @@
 # State Machine Compiler
-This project forked http://smc.sourceforge.net/ SMC-project and translated its project structure to a maven project structure to enable the SMC-library to be distributed via mavens binary distribution system. This enables SMC to be included in any maven-based java (and JVM-based) projects.
+This project forked https://github.com/orolle/SMC, primarily so the artifacts are published to maven central
 
-Further this project forked http://mojo.codehaus.org/smc-maven-plugin/ to provide a smc-maven-plugin which enables maven to compile sm-files to java semi-automatic. Add this plugin to your pom.xml
 ```
 <project>
   ...
@@ -34,7 +33,7 @@ Put your sm-files in the "src/main/smc"-folder of your project root. Compile the
 To execute the compiled java-classes include the maven dependency in your pom.xml
 ```
 <dependency>
-  <groupId>com.github.orolle</groupId>
+  <groupId>uk.camsw.smc</groupId>
   <artifactId>smc-lib-java</artifactId>
   <version>6.4.0</version>
 </dependency>

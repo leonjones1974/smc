@@ -3,19 +3,23 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.orolle</groupId>
+	<groupId>uk.camsw.smc</groupId>
 	<artifactId>SMC</artifactId>
-	<version>6.4.0</version>
+	<version>6.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<properties>
+
+	</properties>
+
 	<name>SMC</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/leonjones1974/smc</url>
 	<description>Fork of State Machine Compiler (SMC). It generates state machines.</description>
 
 	<developers>
 		<developer>
-			<name>Oliver Rolle</name>
-			<url>https://www.github.com/orolle</url>
+			<name>Leon Jones</name>
+			<url>https://github.com/leonjones1974/smc</url>
 		</developer>
 	</developers>
 
@@ -28,15 +32,15 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git@github.com:orolle/SMC.git</connection>
-		<developerConnection>scm:git:git@github.com:orolle/SMC.git</developerConnection>
-		<url>git@github.com:orolle/SMC</url>
+		<connection>scm:git:git@github.com:leonjones1974/smc.git</connection>
+		<developerConnection>scm:git:git@github.com:leonjones1974/smc.git</developerConnection>
+		<url>https://github.com/leonjones1974/smc</url>
 	</scm>
 
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>http://github.com/orolle/SMC/issues</url>
+		<url>https://github.com/leonjones1974/smc/issues</url>
 	</issueManagement>
 
 	<repositories>
@@ -45,10 +49,6 @@
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
 	</repositories>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -80,23 +80,28 @@
 		</repository>
 	</distributionManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.4</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+	<profiles>
+		<profile>
+			<id>publish</id>
+			<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>1.4</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>
